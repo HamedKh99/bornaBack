@@ -15,7 +15,7 @@ class HaftkhanPreView(views.APIView):
 
 
 class HaftkhanSignupView(views.APIView):
-    permission_classes = permissions.AllowAny
+    permission_classes = [permissions.AllowAny]
 
     def post(self, request):
         print(request.data)
