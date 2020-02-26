@@ -1,4 +1,4 @@
-from rest_framework import views
+from rest_framework import views, permissions
 from rest_framework.response import Response
 
 from .models import *
@@ -15,6 +15,8 @@ class HaftkhanPreView(views.APIView):
 
 
 class HaftkhanSignupView(views.APIView):
+    permission_classes = permissions.AllowAny
+
     def post(self, request):
         print(request.data)
         new_signup = HaftkhanSignup(complex_name=request.data['complex_name'], state_name=request.data['state_name'],
