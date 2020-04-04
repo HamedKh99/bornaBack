@@ -8,6 +8,12 @@ class HeadingSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'motto']
 
 
+class IntroductionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Introduction
+        fields = ['id', 'title', 'description', 'logo']
+
+
 class SectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Section
